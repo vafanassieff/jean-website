@@ -10,10 +10,11 @@ if [ "$1" == "github" ]; then
     cp -r ../src ./dist
     docker build -t $IMAGE_NAME:latest .
     docker push $IMAGE_NAME
-    echo "Image built √"
+    echo "$IMAGE_NAME built √"
 else
     cd docker
     rm -rf ./dist
     cp -r ../src ./dist
     docker build  -t $IMAGE_NAME:latest .
+    echo "$IMAGE_NAME built √"
 fi
